@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <link rel="stylesheet/less" href="css/index.less">
+    <link rel="stylesheet" href="fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/less-2.5.3.min.js"></script>
+    <!--css3中不要写前缀兼容的插件-->
+    <script src="js/prefixfree.min.js"></script>
+
+    <script>
+        //原写法：是为了防止不冲突，放在闭包里面
+        //js计算实质的视口尺寸，然后得到真实的rem
+            var computedREM = function(){
+                var winW = document.documentElement.clientWidth;
+                var desW = 640;
+                //给html设置符合视口的font-size：视口大小/设计稿大小 * 假设的font-size = 真正的font-size
+                if(winW >= 640){
+                    document.documentElement.style.fontSize = "100px";
+                    return;
+                }
+                document.documentElement.style.fontSize = winW / desW * 100 + "px";
+                console.log( winW / desW * 100);
+            };
+            computedREM();
+
+            //当视口大小发生变化，重新加载：
+            window.addEventListener('resize',computedREM);
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <!--loading-->
+    <div class="loading">
+        <div class="title">
+            <h1>个人介绍</h1>
+            <h2>H5场景交互型简历</h2>
+        </div>
+        <div class="progress">
+            <div class="current"></div>
+        </div>
+    </div>
+
+
+    <div class="swiper-container mark">
+
+        <canvas class="cv"><span>您的浏览器不支持canvas</span></canvas>
+
+        <div class="swiper-wrapper">
+            <div class="swiper-slide page1">
+                <div class="title">
+                    <h2>这是我的简历，通过简历您会更了解我</h2>
+                </div>
+
+
+                <div id="person"></div>
+                <div id="personage">
+                    <span>个人</span>
+                    <span>简历</span>
+                </div>
+
+                <div class="details">
+                    <h3 class="name">姓名：林新桂</h3>
+                    <h3 class="target">求职目标：前端工程师(实习生)</h3>
+                </div>
+            </div>
+
+            <div class="swiper-slide page2">
+                <div class="title">
+                    <h2>个人信息</h2>
+                </div>
+                <div class="name">
+                    <div class="pic"></div>
+                    <img src="img/zf_messageStudent.png" alt="">
+                    <div class="right">
+                        <span>姓名：林新桂</span>
+                        <span class="shixi">求职目标：前端工程师(实习生)</span>
+                    </div>
+                </div>
+                <div class="xinxi">
+                    <p><span class="fa fa-map-marker"></span>广州 天河区</p>
+                    <p><span class="fa fa-user"></span>1997.06</p>
+                    <p><span class="fa fa-university"></span>广州城市职业学院</p>
+                    <p><span class="fa fa-television"></span>计算机网络技术</p>
+                    <p><span class="fa fa-phone"></span>18023354559</p>
+                    <p><span class="fa fa-envelope"></span>61037370@qq.com</p>
+                </div>
+            </div>
+
+            <div class="swiper-slide page3">
+                <div class="title">
+                    <h2>专业技能</h2>
+                </div>
+                <dl>
+                    <dt>前端技能</dt>
+                    <dd>
+                        <em>01</em>
+                        <a href="#">HTML5 + CSS3布局</a>
+                    </dd>
+                    <dd>
+                        <em>02</em>
+                        <a href="#">JavaScript</a>
+                    </dd>
+                    <dd>
+                        <em>03</em>
+                        <a href="#">JQuery</a>
+                    </dd>
+                    <dd>
+                        <em>04</em>
+                        <a href="#">Ajax</a>
+                    </dd>
+                    <dd>
+                        <em>05</em>
+                        <a href="#">canvas + ECharts</a>
+                    </dd>
+                    <dd>
+                        <em>06</em>
+                        <a href="#">移动端响应式布局</a>
+                    </dd>
+                    <dd>
+                        <em>07</em>
+                        <a href="#">less语法</a>
+                    </dd>
+                    <dd class="last">
+                        <em>08</em>
+                        <a href="#">git操作</a>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="swiper-slide page4">
+                <div class="title">
+                    <h2>项目经验</h2>
+                </div>
+
+                <ul class="line">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+                <div class="content">
+                    <div class="tit">
+                        <p>2018.05-2018.06</p>
+                        <h2>乐淘商城--移动端</h2>
+                    </div>
+                    <!--介绍-->
+                    <div class="present">
+                        <h3>该项目采用的是前后端完全分离的技术实现的</h3>
+                    </div>
+                    <!--技术-->
+                    <div class="skill">
+                        <div class="before">
+                            <h3>前台</h3>
+
+                            <p>1.该项目基于<del>MUI框架</del>实现</p>
+                            <p>2.采用<del>zepto库</del>兼容高版本浏览器</p>
+                            <p>3.ajax数据交互采用<del>artTemplate模板</del>渲染</p>
+                            <p>4.搜索历史采用<del>localStorage</del>本地存储</p>
+                            <p>5.HTML5+ CSS3布局</p>
+                        </div>
+                        <div class="after">
+                            <h3>后台</h3>
+                            <p>1.该项目基于<del>Bootstrap</del>实现</p>
+                            <p>2.登录校验采用的是<del>Bootstrap-validator插件</del></p>
+                            <p>3.分页功能采用的是<del>layui框架</del>实现</p>
+                            <p>4.数据可视化采用的是<del>ECharts</del></p>
+                            <p>5.上传功能采用的是<del>JQuery-fileupload插件</del></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="swiper-slide page5">
+                <div class="title">
+                    <h2>项目作品gif展示</h2>
+                </div>
+
+                <div class="product">
+                    <ul>
+                        <li class="mobile2">
+                            <img src="img/qiantai2.gif" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="swiper-slide page6">
+                <div class="title">
+                    <h2>项目作品gif展示</h2>
+                </div>
+
+                <div class="product">
+                    <ul>
+                        <li class="houtai1">
+                            <img src="img/houtai1.gif" alt="">
+                        </li>
+                        <li class="houtai2">
+                            <img src="img/houtai2.gif" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="swiper-slide page7">
+                <div class="title">
+                    <h2>demo页面展示</h2>
+                </div>
+                <div class="product">
+                    <ul>
+                        <li class="jd">
+                            <img src="img/jd.png" alt="">
+                        </li>
+                        <li class="yundao">
+                            <img src="img/yundao.png" alt="">
+                        </li>
+                        <li class="mi">
+                            <img src="img/mi.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="swiper-slide page8">
+                <div class="title">
+                    <h2>demo排序展示</h2>
+                </div>
+                <div class="product">
+                    <ul>
+                        <li class="three">
+                            <img src="img/paixu1%20(2).gif" alt="">
+                        </li>
+                        <li class="paixu">
+                            <img src="img/paixu1%20(1).gif" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="swiper-slide page9">
+                <div class="thanks">
+                    <h3>THAKNS</h3>
+                </div>
+                <div class="xiwang">
+                    <span></span>
+                </div>
+                <div class="erweima">
+                    <img src="img/erweima.png" alt="">
+                    <p>可添加我的微信账号</p>
+                </div>
+
+
+                <div class="contact">
+                    <p class="phone">
+                        电话：18023354559
+                    </p>
+                    <p class="email">
+                        邮箱：61037370@qq.com
+                    </p>
+            </div>
+    </div>
+        </div>
+    <div class="move"></div>
+        <!--preload="none":不加载-->
+    <div class="music active">
+         <audio loop  src="audio/music.mp3" id="song"></audio>
+    </div>
+</div>
+
+<script src="js/zepto.min.js"></script>
+<script src="js/swiper-3.4.2.jquery.min.js"></script>
+<!--js库：3d折叠-->
+<script src="js/makisu.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
