@@ -2,7 +2,7 @@ function loading() {
     var $loadingBox = $(".loading");
     var $current = $loadingBox.find(".current");
 
-    var imagesData= ["img/arr.png","img/bg.png","img/canvas.png","img/contact.png","img/cube1.png","img/cube2.png","img/cube3.png","img/cube4.png","img/cube5.png","img/cube6.png","img/cubeBg.jpg","img/cubeTip.png","img/erweima.png","img/houtai1.gif","img/houtai2.gif","img/jd.png","img/letao1.png","img/letao2.png","img/letao3.png","img/mi.png","img/music.png","img/outline.png","img/paixu1 (1).gif","img/paixu1 (2).gif","img/qiantai1.gif","img/qiantai2.gif","img/titBg.jpg","img/xinxi.jpg","img/xiwang.png","img/yundao.png","img/zf_messageStudent.png"];
+    var imagesData= ["img/arr.png","img/bg.png","img/canvas.png","img/contact.png","img/cube1.png","img/cube2.png","img/cube3.png","img/cube4.png","img/cube5.png","img/cube6.png","img/cubeBg.jpg"];
 
     //预加载图片：
     var n = 0;
